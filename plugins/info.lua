@@ -2,22 +2,22 @@ local function callback_reply(extra, success, result)
 	--icon & rank ------------------------------------------------------------------------------------------------
 	userrank = "Member"
 	if is_vip(msg) then
-		userrank = "VIP ⭐⭐⭐⭐"
+		userrank = "➲VIP 👑👑👑👑👑"
 		send_document(org_chat_id,"./icons/7.webp", ok_cb, false)
 	elseif is_sudo(result) then
-		userrank = "Sudo ⭐⭐⭐⭐⭐"
+		userrank = "➲Sudo 👑👑👑👑"
 		send_document(org_chat_id,"./icons/8.webp", ok_cb, false)
 	elseif is_admin(result) then
-		userrank = "Admin ⭐⭐⭐"
+		userrank = "➲Admin 👑👑👑"
 		send_document(org_chat_id,"./icons/3.webp", ok_cb, false)
 	elseif tonumber(result.from.id) == tonumber(gp_leader) then
-		userrank = "Leader ⭐⭐"
+		userrank = "➲Leader 👑👑"
 		send_document(org_chat_id,"./icons/6.webp", ok_cb, false)
 	elseif is_momod(result) then
-		userrank = "Moderator ⭐"
+		userrank = "➤Moderator 👑"
 		send_document(org_chat_id,"./icons/4.webp", ok_cb, false)
 	elseif tonumber(result.from.id) == tonumber(our_id) then
-		userrank = "Umbrella ⭐⭐⭐⭐⭐⭐"
+		userrank = "Umbrella 👑👑👑👑👑👑"
 		send_document(org_chat_id,"./icons/9.webp", ok_cb, false)
 	elseif result.from.username then
 		if string.sub(result.from.username:lower(), -3) == "bot" then
@@ -108,19 +108,19 @@ local function callback_reply(extra, success, result)
 		if result.from.phone then
 			number = "0"..string.sub(result.from.phone, 3)
 			if string.sub(result.from.phone, 0,2) == '98' then
-				number = number.."\nکشور: جمهوری اسلامی ایران"
+				number = number.."\n ➲ country : Iran"
 				if string.sub(result.from.phone, 0,4) == '9891' then
-					number = number.."\nنوع سیمکارت: همراه اول"
+					number = number.."\n ➲ Simcard : Hamrah e Aval"
 				elseif string.sub(result.from.phone, 0,5) == '98932' then
-					number = number.."\nنوع سیمکارت: تالیا"
+					number = number.."\n ➲ SimCard : Talia"
 				elseif string.sub(result.from.phone, 0,4) == '9893' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n ➲ SimCard : Irancell"
 				elseif string.sub(result.from.phone, 0,4) == '9890' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n ➲ SimCard : Irancell"
 				elseif string.sub(result.from.phone, 0,4) == '9892' then
-					number = number.."\nنوع سیمکارت: رایتل"
+					number = number.."\n ➲ SimCard : Rightel"
 				else
-					number = number.."\nنوع سیمکارت: سایر"
+					number = number.."\n ➲ SimCard : Not Saved "
 				end
 			else
 				number = number.."\nکشور: خارج\nنوع سیمکارت: متفرقه"
